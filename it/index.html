@@ -112,17 +112,17 @@
 </head>
 <body>
 
- <div id="langhideit">
+<div id="langhideen">
    <br>
-   &nbsp;We have detected that you maybe speak Italian, do you want to be redirected to the italian site? <button onclick="$('#langhideit').hide();">NO</button>&nbsp;<button onclick="window.open('https://dropinsound.numode-foss.eu/it','_self');">OK</button>
+   &nbsp;We have detected that you maybe speak English, do you want to be redirected to the english site? <button onclick="$('#langhideen').hide();">NO</button>&nbsp;<button onclick="window.open('https://dropinsound.numode-foss.eu','_self');">OK</button>
    <br><br>
- </div>
+</div>
 
- <div id="langhidecn">
+<div id="langhidecn">
    <br>
    &nbsp;We have detected that you maybe speak Chinese, do you want to be redirected to the chinese site? <button onclick="$('#langhidecn').hide();">NO</button>&nbsp;<button onclick="window.open('https://dropinsound.numode-foss.eu/cn','_self');">OK</button>
    <br><br>
- </div>
+</div>
 
 <div id="HCsplash" style="padding-top: 160px; text-align:center;color:#ffffff;display:none;">
    <div id="myh1"><H1>DropInSound</H1></div><br>
@@ -159,25 +159,25 @@
         <span aria-hidden="true">&times;</span>
        </button>
 	
-	   Hello and welcome to DropInSound!<br><br>
-	   
-	   DropInSound is a light and simple software on premise to log your own stuff in sound form.<br><br>
-	   
-	   DropInSound is released under GPLv3 license, it is supplied AS-IS and we do not take any responsibility for its misusage.<br><br>
-	   
-	   First step, use the left side panel password and salt fields to create the hash to insert in the config file. Remember to manually set there also the salt value.<br><br>
-	   
-	   As you are going to run DropInSound in the PHP process context, using a limited web server or phpfpm user, you must follow some simple directives for an optimal first setup:<br>
-	   <ol>
-	   <li>Check the permissions of your "data" folder in your web app private path; and set its path in the config file.</li>
-	   <li>In the data path create a ".DI_history" and ".DI_captchahistory" files and give them the write permission.</li>
-     <li>Finish to setup the configuration file apporpriately, in the specific:</li>
-     <ul>
-       <li>Configure the APP_USE and APP_CONTEXT appropriately.</li>
-       <li>Configure the DISPLAY attributes as required.</li>
-       <li>Configure the max history items as required (default: 1000).</li>	      
-	   </ul>
-     </ol>
+Ciao e benvenuto su DropInSound!<br><br> 
+
+DropInSound è un software on-premise leggero e semplice per registrare i tuoi contenuti in formato audio.<br><br> 
+
+DropInSound è rilasciato sotto licenza GPLv3, viene fornito AS-IS e non ci assumiamo alcuna responsabilità per il suo utilizzo improprio.<br><br> 
+
+Primo passaggio, utilizzare la password del pannello laterale sinistro e i campi salt per creare l'hash da inserire nel file di configurazione. Ricordati di impostare manualmente lì anche il valore del sale.<br><br> 
+
+Poiché eseguirai DropInSound nel contesto del processo PHP, utilizzando un server Web limitato o un utente phpfpm, devi seguire alcune semplici direttive per una prima configurazione ottimale:<br> 
+<ol> 
+<li>Verifica i permessi della tua cartella "dati" nel percorso privato della tua app web; e imposta il suo percorso nel file di configurazione.</li> 
+<li>Nel percorso dei dati crea un file ".DI_history" e ".DI_captchahistory" e concedi loro il permesso di scrittura.</li> 
+<li>Terminare di impostare opportunamente il file di configurazione, nello specifico:</li> 
+<ul> 
+<li>Configura APP_USE e APP_CONTEXT in modo appropriato.</li> 
+<li>Configura gli attributi DISPLAY come richiesto.</li> 
+<li>Configura il numero massimo di elementi della cronologia come richiesto (impostazione predefinita: 1000).</li> 
+</ul> 
+</ol>
 	   
 	   <br>	
 		
@@ -247,12 +247,12 @@ window.addEventListener("resize", function() {
 </script>  
 
 <script>
-    function isItalian() {
+    function isEnglish() {
       ret = false;
       lang = window.navigator.language;
       lang = lang.toLowerCase();
       //alert(lang);
-      if (lang === "it" || lang === "it-it" || lang === "italian") {
+      if (lang === "en" || lang === "en-us" || lang === "en-gb" || lang === "english") {
         ret = true;
       }
       return ret;
@@ -268,8 +268,8 @@ window.addEventListener("resize", function() {
       return ret;
     }
 
-    if (isItalian()) {
-      $("#langhideit").show();
+    if (isEnglish()) {
+      $("#langhideen").show();
     }
 
     if (isChinese()) {
